@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import data from '../data/TestApi'
-// import axios from 'axios'
+import axios from 'axios'
 
 const headers = [
     "id",
@@ -33,28 +33,29 @@ const ApiTable = ({ token }) => {
         setApiData("data")
 
 
-        // var data = JSON.stringify({
-        //     "fieldData": {},
-        //     "script": "getData"
-        // });
-
-        // var config = {
-        //     method: 'patch',
-        //     url: 'https://efatura.etrsoft.com/fmi/data/v1/databases/testdb/layouts/testdb/records/1',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'Authorization': `Bearer ${token}`
-        //     },
-        //     data: data
-        // };
-
-        // axios(config)
-        //     .then(function (response) {
-        //         console.log(JSON.stringify(response.data));
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     });
+        var axios = require('axios');
+        var data = JSON.stringify({
+          "fieldData": {},
+          "script": "getData"
+        });
+        
+        var config = {
+          method: 'patch',
+          url: 'https://efatura.etrsoft.com/fmi/data/v1/databases/testdb/layouts/testdb/records/1',
+          headers: { 
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer 8f6e231b6f7622f2512d6b87522960b36345673bbf9ec89df5ea'
+          },
+          data : data
+        };
+        
+        axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
 
     }
 

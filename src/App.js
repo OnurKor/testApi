@@ -10,22 +10,25 @@ function App() {
   const handleLogin = () => {
     setToken("fasdfsdgasg");
 
-    // var config = {
-    //   method: "post",
-    //   url: "https://efatura.etrsoft.com/fmi/data/v1/databases/testdb/sessions",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Authorization: {"userName": "apitest", "password": "test123"},
-    //   },
-    // };
+    var axios = require('axios');
 
-    // axios(config)
-    //   .then(function (response) {
-    //     console.log(JSON.stringify(response.data));
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+    var config = {
+      method: 'post',
+      url: 'https://efatura.etrsoft.com/fmi/data/v1/databases/testdb/sessions',
+      headers: { 
+        'Content-Type': 'application/json', 
+        'Authorization': 'Basic YXBpdGVzdDp0ZXN0MTIz'
+      }
+    };
+    
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
 
     // axios.post("https://efatura.etrsoft.com/fmi/data/v1/databases/testdb/sessions", {"userName": "apitest", "password": "test123"})
     // .then(function (response) {
