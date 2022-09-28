@@ -1,0 +1,43 @@
+.App {
+  
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(125, 101, 126);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  flex-direction: column;
+  gap: 1em;
+  overflow: auto;
+}
+
+thead {
+  background-color: #fff;
+  color: #000;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+tbody td {
+  /* color: #fff !important; */
+  font-weight: bold;
+  max-width: 140px;
+  
+}
+
+h4 {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+}
+
+.hesap {
+    max-height: 150px;
+    max-width:190px;
+    overflow: hidden;
+    /* text-align: justify; */
+}
+
